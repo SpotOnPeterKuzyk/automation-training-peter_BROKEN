@@ -1,0 +1,38 @@
+{
+  "plugins": [
+    "prettier",
+    "wdio"
+  ],
+  "extends": [
+    "eslint:recommended",
+//    "plugin:prettier/recommended",
+    "plugin:wdio/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+//    "prettier/prettier": [
+//      "error"
+//    ],
+    "max-len": ["error", {"code": 115, "ignoreUrls": true}],
+    "semi": [2, "never"],
+    "arrow-parens": [2, "as-needed"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module",
+    // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true
+      // Allows for the parsing of JSX
+    }
+  },
+  "ignorePatterns": [
+    "node_modules/**",
+    "features/*.feature"
+  ]
+}

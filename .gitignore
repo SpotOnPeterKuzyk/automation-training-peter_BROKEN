@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.vscode
+selenium_standalone_chrome.cid
+logs/*
+node_modules
+reports/
+package-lock.json
