@@ -7,7 +7,6 @@ const page = new Page()
 const confirmationPopup = new Popup()
 
 
-
 // eslint-disable-next-line max-len
 When(/^I click on "([^"]*)?" (button|link) on "([^"]*)?" (?:section|page|popup)$/, function (el, elType, pageName) {
     let elementType = this.transform.elementTypeToVariableName[elType]

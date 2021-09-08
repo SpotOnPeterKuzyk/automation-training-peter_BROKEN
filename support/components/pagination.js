@@ -1,35 +1,42 @@
-
 import {Component} from "./index"
 
+
+
 export default class Pagination extends Component {
+
+
+
     constructor(props) {
         super(props)
-        this.previousPageButtonSelector = props.previousPageButtonSelector || ".previous_page.disabled"
-        this.nextPageButtonSelector = props.nextPageButtonSelector || ".next_page"
-        this.pageSelector = props.pageSelector || `//a[normalize-space()='${(this.index)}']`
-        this.activeSelector = props.activeSelector || ".current"
+        this._previousPageButtonSelector = props._previousPageButtonSelector || ".previous_page.disabled"
+        this._nextPageButtonSelector = props._nextPageButtonSelector || ".next_page"
+        this._pageSelector = props._pageSelector || "//a[normalize-space()='2']"
+        this._activeSelector = props._activeSelector || ".current"
+        this._paginationElement = props._paginationElement || ".pagination "
+
     }
+
 
     /**
      * Get the number of the current page.
      * @return {Number}
      */
     get currentPage() {
-        return +this.$(this.pageSelector + this.activeSelector).getText()
+        return +this.$(this._pageSelector + this._activeSelector).getText()
     }
 
     /**
      * Click on the left arrow button.
      */
     prev() {
-        this.$(this.previousPageButtonSelector).click()
+        this.$(this._previousPageButtonSelector).click()
     }
 
     /**
      * Click on the right arrow button.
      */
     next() {
-        this.$(this.nextPageButtonSelector).click()
+        this.$(this._nextPageButtonSelector).click()
     }
 
     /**
@@ -37,8 +44,16 @@ export default class Pagination extends Component {
      * @param pageNumber
      */
     goTo(pageNumber) {
-        this.$$(this.pageSelector)
-            .find(page => +page.getText() === pageNumber)
-            .click()
-    }
+            this.$$(this._pageSelector)
+                .find(page => +page.getText() === pageNumber)
+                .click()
+        }
+
+
+
+
+
+
+
+
 }
