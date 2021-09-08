@@ -1,14 +1,16 @@
 import Page from "./page"
 import {Component, Pagination} from "../components"
 
-
 export default class HomePage extends Page {
+
     constructor() {
         super()
         this._homePagePuppySection = new Component({selector: "#content"})
         this._puppyName = new Component({selector: ".puppy_list h3"})
         this._viewDetailsButton = new Component({selector: ".puppy_list input"})
         this._activeSelector = new Pagination({selector: "[class*='current']"})
+        this._nextPageButtonSelector = new Pagination({selector: ".next_page"})
+
     }
 
     /**
@@ -57,11 +59,22 @@ export default class HomePage extends Page {
     }
 
     /**
-     * Verify curent page number
+     * Verify current page number
      * @param number
      */
     verifyPageNumber(number) {
+        this._activeSelector.isDisplayed()
         expect(this._activeSelector.getText()).toEqual(number)
     }
+
+    /**
+     * Click next page button
+     */
+    clickNextPge() {
+        this._nextPageButtonSelector.waitForClickable()
+        this._nextPageButtonSelector.click()
+
+    }
+
 
 }

@@ -14,8 +14,13 @@ When(/^I proceed to the detail section for the puppy "([^"]*)?"$/, function (nam
     homePage.proceedToViewDetailsForPuppy(name)
 })
 
+Then(/^I can see the "([^"]*)" on "([^"]*)" page$/, function (name, pageNumber) {
+    homePage.verifyPuppyIsPresent(name)
+    homePage.verifyPageNumber(pageNumber)
+})
 
-Then(/^I can see the "([^"]*)" on "([^"]*)" page$/, function (name,pageNumber) {
+Then(/^I go to second page to verify if "([^"]*)" is on "([^"]*)" page$/, function (name, pageNumber) {
+    homePage.clickNextPge()
     homePage.verifyPuppyIsPresent(name)
     homePage.verifyPageNumber(pageNumber)
 })
