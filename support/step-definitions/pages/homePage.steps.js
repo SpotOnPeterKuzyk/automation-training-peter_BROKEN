@@ -20,7 +20,20 @@ Then(/^I can see the "([^"]*)" on "([^"]*)" page$/, function (name, pageNumber) 
 })
 
 Then(/^I go to second page to verify if "([^"]*)" is on "([^"]*)" page$/, function (name, pageNumber) {
-    homePage.clickNextPge()
+    // homePage.clickNextPge()
     homePage.verifyPuppyIsPresent(name)
     homePage.verifyPageNumber(pageNumber)
+})
+
+Then(/^I proceed to the "([^"]*)" page$/, function (page) {
+    homePage.selectPage(page)
+})
+Then(/^I proceed to the "([^"]*)" page to verify if "([^"]*)" is on "([^"]*)" page$/, function
+    (page, name, pageNumber) {
+    homePage.selectPage(page)
+    homePage.verifyPuppyIsPresent(name)
+    homePage.verifyPageNumber(pageNumber)
+})
+When(/^I pause the page$/, function () {
+homePage.pausePage()
 })
