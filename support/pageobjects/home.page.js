@@ -10,7 +10,12 @@ export default class HomePage extends Page {
         this._viewDetailsButton = new Component({selector: ".puppy_list input"})
         this._activeSelector = new Pagination({selector: "[class*='current']"})
         this._nextPageButtonSelector = new Pagination({selector: ".next_page"})
+        this._prevPageButtonSelector = new Pagination({selector: ".previous_page"})
 
+    }
+
+    pausePage() {
+        return browser.pause(5000)
     }
 
     /**
@@ -73,8 +78,25 @@ export default class HomePage extends Page {
     clickNextPge() {
         this._nextPageButtonSelector.waitForClickable()
         this._nextPageButtonSelector.click()
+    }
 
+
+    /**
+     * Click on the specific page button.
+     * @param pageNumber
+     */
+    selectPage(pageNumber) {
+        if (this._activeSelector.getText() === pageNumber) {
+            return pageNumber
+        } else if (this._activeSelector.getText() < pageNumber) {
+            for (let i = 0; this._activeSelector.getText() < pageNumber; i++)
+                this._nextPageButtonSelector.click()
+        } else if (this._activeSelector.getText() > pageNumber) {
+            for (let f = 0; this._activeSelector.getText() > pageNumber; f--)
+                this._prevPageButtonSelector.click()
+        }
     }
 
 
 }
+

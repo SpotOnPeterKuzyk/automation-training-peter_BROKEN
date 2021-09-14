@@ -9,4 +9,11 @@ Feature: Verify that puppy is displayed
 
   Scenario: User is able to see Tipsy on second page
     Given I am on the Puppy Adoption Agency home page
-    Then I go to second page to verify if "Tipsy" is on "2" page
+    When I proceed to the "2" page
+    Then I can see the "Tipsy" on "2" page
+
+
+
+
+
+

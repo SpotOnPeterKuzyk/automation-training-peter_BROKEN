@@ -1,9 +1,7 @@
 import {Component} from "./index"
 
 
-
 export default class Pagination extends Component {
-
 
 
     constructor(props) {
@@ -39,21 +37,4 @@ export default class Pagination extends Component {
         this.$(this._nextPageButtonSelector).click()
     }
 
-    /**
-     * Click on the specific page button.
-     * @param pageNumber
-     */
-    goTo(pageNumber) {
-            this.$$(this._pageSelector)
-                .find(page => +page.getText() === pageNumber)
-                .click()
-        }
-
-
-
-
-
-
-
-
-}
+    }
