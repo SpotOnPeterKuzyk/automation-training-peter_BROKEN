@@ -37,3 +37,6 @@ Then(/^I proceed to the "([^"]*)" page to verify if "([^"]*)" is on "([^"]*)" pa
 When(/^I pause the page$/, function () {
 homePage.pausePage()
 })
+Then(/^I verify that I return back to the home page$/, function () {
+    homePage.isOpen()
+})

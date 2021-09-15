@@ -13,11 +13,13 @@ const drivers = {
 
 exports.config = {
     runner: "local",
-    //  specs: ["./features/**/*.feature"],
+     // specs: ["./features/**/*.feature"],
     //  specs: ["./features/**/sample.feature"],
     //  step_definitions
     //  specs: ["./features/**/puppyDisplayed.feature"],
-    specs: ["./features/**/puppyDetails.feature"],
+    //  specs: ["./features/**/puppyDetails.feature"],
+    specs: ["./features/**/yourLitter.feature"],
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -41,7 +43,7 @@ exports.config = {
     bail: 0,
     // changed URL
     baseUrl: "https://spartantest-puppies.herokuapp.com/",
-        // "http://puppies.herokuapp.com/",
+    // "http://puppies.herokuapp.com/",
     // Default timeout for all waitFor* commands.
     waitforTimeout: 12000,
     // Default timeout in milliseconds for request

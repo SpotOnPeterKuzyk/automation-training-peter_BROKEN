@@ -10,3 +10,4 @@ Feature: See a puppy's details
     Then I proceed to the detail section for the puppy "Twinkie"
     Then I can see adoptions fees are "22.50"
 
+
