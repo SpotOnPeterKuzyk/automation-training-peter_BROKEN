@@ -7,7 +7,7 @@ require("@babel/register")({
 const path = require("path")
 const {hooks} = require("./support/hooks")
 const drivers = {
-    chrome: {version: "92.0.4515.159"}, // https://chromedriver.chromium.org/
+    chrome: {version: "95.0.4638.69"}, // https://chromedriver.chromium.org/
     firefox: {version: "0.27.0"}, // https://github.com/mozilla/geckodriver/releases
 }
 
